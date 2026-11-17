@@ -1,0 +1,6 @@
+Name : uness | Time : 2026-11-17 22:06:09 | Douleure : rassi | Department : URGENT - NEUROLOGY & FEVER UNIT 
+Name : uness | Time : 2026-11-17 22:06:09 | Douleure : rassi | Department : URGENT - NEUROLOGY & FEVER UNIT 
+Time: 2026-11-17 23:25:15 | Name: ana | Symptom: qlbi  | Dept: NORMAL - GENERAL CONSULTATION
+Time: 2026-11-17 23:26:02 | Name: 7na | Symptom: rassi | Dept: URGENT - NEUROLOGY & FEVER UNIT
+Time: 2026-11-17 23:27:35 | Name: hamid | Symptom: tete | Dept: URGENT - NEUROLOGY & FEVER UNIT
+Name: hamada | Time: 2026-11-17 23:28:46 | Symptom: tete | Dept: URGENT - NEUROLOGY & FEVER UNIT
