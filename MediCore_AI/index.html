@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediCore AI · Hospital OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a href="#" class="brand" data-go="home">
+    <img src="img/logo.svg" width="36" height="36" alt="">
+    MediCore AI
+  </a>
+  <nav>
+    <button data-go="register">Register patient</button>
+    <button data-go="triage">Triage</button>
+    <button data-go="vault">Admin vault</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="view on">
+  <div class="hero">
+    <div>
+      <h1>Every patient seen, sorted and safe.</h1>
+      <p class="lead">Register vitals, route symptoms in Darija, French, English or Arabic, and spot critical cases before they wait.</p>
+      <button class="btn" data-go="register">Register a patient</button>
+    </div>
+    <div class="monitor" aria-label="Live heart monitor">
+      <div class="m-head"><span>Ward monitor</span><span class="bpm"><b id="bpm">74</b> bpm</span></div>
+      <svg viewBox="0 0 600 160" preserveAspectRatio="none" aria-hidden="true">
+        <path class="grid" d="M0 40H600M0 80H600M0 120H600"/>
+        <path class="base" d="M0 80H60L72 70L84 80H130L140 92L152 20L166 130L178 80H230L244 66L258 80H330L340 92L352 20L366 130L378 80H430L444 66L458 80H600"/>
+        <path class="live" pathLength="100" d="M0 80H60L72 70L84 80H130L140 92L152 20L166 130L178 80H230L244 66L258 80H330L340 92L352 20L366 130L378 80H430L444 66L458 80H600"/>
+      </svg>
+      <div class="m-foot"><span>Last registered patient sets the rhythm</span></div>
+    </div>
+  </div>
+
+  <div class="photos">
+    <figure><img src="img/doctor.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1758691463384-771db2f192b3?auto=format&fit=crop&w=900&q=70'" alt="Doctor in a white gown with a stethoscope, smiling at her desk" loading="lazy"><figcaption>Photo by Vitaly Gariev on Unsplash</figcaption></figure>
+    <figure><img src="img/surgery.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1770836037220-8848299e6b42?auto=format&fit=crop&w=900&q=70'" alt="Surgeons working in an operating room" loading="lazy"><figcaption>Photo by Alexander Mass on Unsplash</figcaption></figure>
+  </div>
+
+  <div class="tiles">
+    <button class="tile" data-go="register">
+      <svg viewBox="0 0 48 48"><path d="M24 40S6 29 6 17a9 9 0 0 1 18-2 9 9 0 0 1 18 2c0 12-18 23-18 23z"/></svg>
+      <h3>Register patient</h3><p>Heart rate and blood sugar, scored instantly.</p>
+    </button>
+    <button class="tile" data-go="triage">
+      <svg viewBox="0 0 48 48"><path d="M12 6v14a8 8 0 0 0 16 0V6M20 28v6a8 8 0 0 0 16 0"/><circle cx="36" cy="26" r="4"/></svg>
+      <h3>Multilingual triage</h3><p>Describe symptoms, get the right department.</p>
+    </button>
+    <button class="tile" data-go="vault">
+      <svg viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="20" rx="4"/><path d="M16 22v-6a8 8 0 0 1 16 0v6"/></svg>
+      <h3>Admin vault</h3><p>Critical patients, records and appointments. Director access only.</p>
+    </button>
+  </div>
+</section>
+
+<section id="register" class="view panel">
+  <h2>Register patient</h2>
+  <form id="regForm" class="form" novalidate>
+    <label>Name<input id="rName" required autocomplete="off"></label>
+    <label>Age<input id="rAge" type="number" min="1" required></label>
+    <label>Heart rate (bpm)<input id="rHr" type="number" min="1" required></label>
+    <label>Blood sugar<input id="rSug" type="number" min="1" required></label>
+    <button class="btn" type="submit">Analyze and save</button>
+  </form>
+  <div id="regOut" aria-live="polite"></div>
+</section>
+
+<section id="triage" class="view panel">
+  <h2>Multilingual triage</h2>
+  <form id="triForm" class="form" novalidate>
+    <label>Name<input id="tName" required autocomplete="off"></label>
+    <label class="wide">What do you feel? (Darija / FR / EN / AR)<input id="tSym" required autocomplete="off" placeholder="rassi kaydrni, mal au ventre, heart…"></label>
+    <button class="btn" type="submit">Get my ticket</button>
+  </form>
+  <div id="triOut" aria-live="polite"></div>
+</section>
+
+<section id="vault" class="view panel">
+  <h2>Admin vault</h2>
+  <form id="gate" class="form">
+    <label>Password<input id="pw" type="password" autocomplete="off"></label>
+    <button class="btn" type="submit">Unlock</button>
+  </form>
+  <p id="gateMsg" class="sub" aria-live="polite"></p>
+  <div id="vaultBody" hidden></div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
